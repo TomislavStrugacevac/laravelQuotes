@@ -22,7 +22,7 @@
     <section class="edit-quote">
         <h1>Add a Quote</h1>
 
-        <form action="">
+        <form action="{{ route('create') }}" method="post">
             <div class="input-group">
                 <label for="author">Your Name</label>
                 <input type="text" name="author" id="author" placeholder="Your Name"/>
