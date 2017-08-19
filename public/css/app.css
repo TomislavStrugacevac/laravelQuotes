@@ -38,6 +38,7 @@ body {
 
 .quote.last-in-line{
     margin-right: 0px;
+    margin-left: 0px;
 }
 
 .quote .info{
@@ -126,7 +127,7 @@ body {
 .info-box.fail {
     border: 1px solid #ff6b6a;
     background-color: #ffc2ba;
-    color: #ff6b6a;
+    color: red;
 }
 
 .info-box.success {

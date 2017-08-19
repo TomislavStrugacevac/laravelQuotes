@@ -23,4 +23,9 @@ Route::middleware(['web'])->group(function(){
         'as' => 'create'
     ]);
 
+    Route::get('/delete/{quote_id}', [
+        'uses' => 'QuoteController@getDeleteQuote',
+        'as' => 'delete'
+    ]);
+
 });

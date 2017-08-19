@@ -10,14 +10,32 @@
 
 @section('content')
 
+    @if( count($errors) > 0)
+        <section class="info-box fail">
+            @foreach($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </section>
+    @endif
+
+    @if(Session::has('success'))
+        <section class="info-box success">
+            {{ Session::get('success') }}
+        </section>
+    @endif
     <section class="quotes">
         <h1>Latest Quotes</h1>
-        <article class="quote">
-            <div class="delete"><a href="#">x</a></div>
-            Quote text
-            <div class="info">Created by <a href="#">Struga</a> created on...</div>
-        </article>
-        Pagination
+        @for($i=0; $i<count($quotes); $i++)
+            <article class="quote{{ $i % 3 === 0 ? ' first-in-line' : ($i+1)%3 === 0 ? ' last-in-line' : '' }}">
+                <div class="delete"><a href="{{ route('delete', ['quote_id' => $quotes[$i]->id]) }}">x</a></div>
+                {{ $quotes[$i]->quote }}
+                <div class="info">Created by <a href="#">{{ $quotes[$i]->author->name }}</a> created on {{ $quotes[$i]->created_at }}</div>
+            </article>
+        @endfor
+        <div class="pagination">
+            Pagination
+        </div>
+
     </section>
     <section class="edit-quote">
         <h1>Add a Quote</h1>
