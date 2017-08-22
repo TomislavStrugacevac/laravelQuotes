@@ -14,7 +14,8 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\QuoteCreated' => [
-            'App\Listeners\CreateLogEntry', 
+            'App\Listeners\CreateLogEntry',
+            'App\Listeners\SendUserNotification'
         ],
     ];
 

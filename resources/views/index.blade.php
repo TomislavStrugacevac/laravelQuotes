@@ -48,12 +48,16 @@
 
     </section>
     <section class="edit-quote">
-        <h1>Add a Quote</h1>
+        <h3>Add a Quote</h3>
 
         <form action="{{ route('create') }}" method="post">
             <div class="input-group">
                 <label for="author">Your Name</label>
                 <input type="text" name="author" id="author" placeholder="Your Name"/>
+            </div>
+            <div class="input-group">
+                <label for="email">Your Name</label>
+                <input type="text" name="email" id="email" placeholder="Your E-Mail"/>
             </div>
             <div class="input-group">
                 <label for="quote">Your Quote</label>
