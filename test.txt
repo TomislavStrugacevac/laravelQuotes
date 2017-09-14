@@ -1,0 +1,6 @@
+
+                                                           
+  [Symfony\Component\Debug\Exception\FatalErrorException]  
+  syntax error, unexpected '3' (T_LNUMBER)                 
+                                                           
+
